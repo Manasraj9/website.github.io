@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="vh-100">
+    <div class="alert alert-danger alert-dismissible fade show {{style}}" role="alert">
+        <i class="fa-solid fa-triangle-exclamation"></i> {{errorMsg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form action="/" method="post">
+                            <h3 class="mb-5">Sign in</h3>
+                            <div class="input-group mb-3">
+                                <select class="form-select" name='loginType' aria-label="Default select example" required>
+                                    <option selected>Select User Type</option>
+                                    <option value="1">Student Login</option>
+                                    <option value="2">Facility Login</option>
+                                </select>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="loginId"
+                                    placeholder="name@example.com" required>
+                                <label for="floatingInput">Login id</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="Password" class="form-control" id="floatingInput" name="password"
+                                    placeholder="name@example.com" required>
+                                <label for="floatingInput">Password</label>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                            <hr class="my-4">
+                        </form>
+                        <p>Don't have account? <a class="link-primary text-decoration-none" href="/signup">Sign Up</a> here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
